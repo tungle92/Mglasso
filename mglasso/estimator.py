@@ -92,7 +92,7 @@ def hggm2(X,
     
         lambda2 = lambda2*lambda2_factor
         
-    tree = np.c_[merge, height, size, np.cumsum(gains)]
+    tree = np.c_[merge, size, height, np.cumsum(gains)]
   
     result = {"out" : out, "tree" : tree}
   
