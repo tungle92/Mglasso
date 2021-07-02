@@ -1,9 +1,10 @@
 from igraph import Graph, plot
 import numpy as np
 
-def adjacency_metrix(Beta):
+def adjacency_matrix(Beta):
     Beta = np.array(Beta)
-    return np.int(Beta != 0)
+    boolean = (Beta != 0)
+    return boolean.astype(int)
 
 def igraph(Beta):
     Beta = np.array(Beta)
@@ -23,9 +24,7 @@ def igraph(Beta):
 from scipy.cluster import hierarchy
 import matplotlib.pyplot as plt
 
-def dendrogram(Z, option = 'lambda2'):
-    if (option == 'lambda2'):
-        hierarchy.dendrogram(Z[:, 0:4])
-    elif (option == 'gains'):
-        hierarchy.dendrogram(Z[:, [0,1,4,3]])            
+def dendrogram(Z):
+    hierarchy.dendrogram(Z)          
     plt.show()
+    
