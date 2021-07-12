@@ -127,8 +127,8 @@ class igraph:
         
         self.Beta = conesta_rwrapper(self.X, self.lambda1, self.lambda2)
         
-    def graph(self):
-        return gr.igraph(self.Beta)
+    def graph(self, option = "AND"):
+        return gr.igraph(self.Beta, option)
         
-    def adjacency_matrix(self):
-        return gr.adjacency_matrix(self.Beta)
+    def adjacency_matrix(self, option = "AND"):
+        return gr.adjacency_matrix(self.Beta, option)
